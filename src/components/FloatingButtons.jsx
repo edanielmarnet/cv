@@ -1,13 +1,17 @@
 import React from 'react';
-//import './FloatingButtons.css';
+import ReactGA from 'react-ga';
 
 const FloatingButtons = ({ toggleLanguage, language }) => {
   // Função para imprimir a página
   const handlePrint = () => {
+    // Ação 1: Rastrear o clique no Google Analytics
+    ReactGA.event({
+      category: 'Botão',
+      action: 'Clique no Botão CV',
+    });
     // Chama a função de impressão do navegador
     window.print();
   };
-  
 
   // URL da página atual para compartilhar no WhatsApp
   const currentUrl = "https://edanielmarnet.github.io/cv/";
@@ -41,11 +45,11 @@ const FloatingButtons = ({ toggleLanguage, language }) => {
 
       {/* Botão para abrir o WhatsApp para contato */}
       <button
-        title="Daniel's WhatsApp"
+        title={language === 'pt' ? 'Daniel WhatsApp' : "Daniel's WhatsApp"}
         className="btn btn-success"
         onClick={() =>
           window.open(
-            `https://api.whatsapp.com/send?phone=5512991876096&text=Olá Daniel! Eu vi seu CV (${currentUrl}), gostaria de entrar em contato.`,
+            `https://api.whatsapp.com/send?phone=5512991876096&text=Olá Daniel, eu vi seu CV e gostaria de entrar em contato.`,
             '_blank'
           )
         }

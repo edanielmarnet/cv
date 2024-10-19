@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import ReactGA from 'react-ga';
 import Header from './components/Header';
 import About from './components/About';
 import Experience from './components/Experience';
@@ -6,9 +7,16 @@ import Skills from './components/Skills';
 import Projects from './components/Projects';
 import Contact from './components/Contact';
 import FloatingButtons from './components/FloatingButtons';
-import './App.css';
+import Dashboard from './components/Dashboard';
+//import './App.css';
 
-function App() {
+const TRACKING_ID = "G-FH8YY22J8F"; // Substitua com o seu ID do Google Analytics
+
+const App = () => {
+  useEffect(() => {
+    ReactGA.initialize(TRACKING_ID);
+    ReactGA.pageview(window.location.pathname + window.location.search);
+  }, []);
   // Estado para controlar o idioma (Português por padrão)
   const [language, setLanguage] = useState('pt');
 
@@ -46,6 +54,13 @@ function App() {
           <Projects language={language} />
         </div>
       </div>
+      {/*
+      <div className="row">
+        <div className="col mx-3 mt-3 p-3 border rounded">
+          <Dashboard language={language} />
+        </div>
+      </div>
+      */}
       <div className="row">
         <div className="col mx-3 mt-3 p-3 border rounded">
           <Contact language={language} />
