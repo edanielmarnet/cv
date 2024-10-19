@@ -4,17 +4,25 @@ import React from 'react';
 const FloatingButtons = ({ toggleLanguage, language }) => {
   // Função para imprimir a página
   const handlePrint = () => {
+    // Chama a função de impressão do navegador
     window.print();
   };
+  
 
   // URL da página atual para compartilhar no WhatsApp
   const currentUrl = "https://edanielmarnet.github.io/cv/";
 
   return (
-    <div className="floating-buttons">
+    <div className="floating-buttons no-print">
+
       {/* Botão para imprimir a página */}
       <button title={language === 'pt' ? 'Imprimir' : 'Print'} className="btn btn-primary" onClick={handlePrint}>
         <i className="bi bi-printer"></i>
+      </button>
+      
+      {/* Botão para alternar idioma */}
+      <button title={language === 'pt' ? 'English' : 'Português'} className="btn btn-primary fs-6" onClick={toggleLanguage}>
+        {language === 'pt' ? 'EN' : 'PT'}
       </button>
 
       {/* Botão para compartilhar o link via WhatsApp */}
@@ -45,10 +53,6 @@ const FloatingButtons = ({ toggleLanguage, language }) => {
         <i className="bi bi-whatsapp"></i>
       </button>
 
-      {/* Botão para alternar idioma */}
-      <button title={language === 'pt' ? 'English' : 'Português'} className="btn btn-secondary fs-6" onClick={toggleLanguage}>
-        {language === 'pt' ? 'EN' : 'PT'}
-      </button>
     </div>
   );
 };

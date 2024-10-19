@@ -56,6 +56,17 @@ button:hover {
   box-shadow: 0 0 10px rgba(0, 56, 102, 0.5);
 }
 
+@media print {
+  /* Força a impressão de gráficos de segundo plano */
+  body {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  .no-print {
+    display: none !important;
+  }
+}
+
 /* Estilizando os Floating Buttons */
 .floating-buttons {
   position: fixed;
@@ -97,3 +108,4 @@ footer {
   background-color: #f9f9f9;
   color: #999999;
 }
+
