@@ -24,10 +24,10 @@ const FloatingButtons = ({ toggleLanguage, language }) => {
         <i className="bi bi-printer"></i>
       </button>
       
-      {/* Botão para alternar idioma */}
+      {/* Botão para alternar idioma 
       <button title={language === 'pt' ? 'English' : 'Português'} className="btn btn-primary fs-6" onClick={toggleLanguage}>
         {language === 'pt' ? 'EN' : 'PT'}
-      </button>
+      </button>*/}
 
       {/* Botão para compartilhar o link via WhatsApp */}
       <button

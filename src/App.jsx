@@ -7,7 +7,7 @@ import Skills from './components/Skills';
 import Projects from './components/Projects';
 import Contact from './components/Contact';
 import FloatingButtons from './components/FloatingButtons';
-import Dashboard from './components/Dashboard';
+//import Dashboard from './components/Dashboard';
 //import './App.css';
 
 const TRACKING_ID = "G-FH8YY22J8F"; // Substitua com o seu ID do Google Analytics
